@@ -25,7 +25,7 @@
 function addButtonListener(className, endpoint) {
   const button = document.querySelector(className);
   button.addEventListener("click", function () {
-    fetch(`http://localhost:5001/${endpoint}`, {
+    fetch(`http://localhost:54351/${endpoint}`, {
       method: "POST",
       body: JSON.stringify({}),
     })
