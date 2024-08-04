@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sapphire Webgui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://bit.ly/3Kw1HC9" rel="stylesheet">  <!--poppins font -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/console.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/all.css') }}">
+  <script src="{{ url_for('static', filename='scripts/windowEvents.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='scripts/pageSwitcher.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='scripts/fetchLogs.js') }}" defer></script>
+</head>
+<body>
+  <div class="window-frame">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+  <div class="console">
+    <div class="header">
+      {% if module %}
+      <h1>Showing output logs from {{ module }}</h1>
+      {% endif %}
+    </div>
+    <div class="output">
+      <!-- ... -->
+    </div>
+    <div class="buttons">
+      <a class="button" href="/raider" class="button">Go to raider</a>
+      <a class="button" href="/nuker" class="button">Go to nuker</a>
+      <a class="button" href="/booster" class="button">Go to booster</a>
+    </div>
+  </div>
+</body>

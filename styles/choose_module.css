@@ -1,0 +1,57 @@
+/**
+ * Aurora Raider (c) 2024
+ *
+ * This file is part of Aurora Raider,
+ * a discord raid toolkit for intended for
+ * educational purposes only.
+ * 
+ * This is a public stylesheet and it does not
+ * contain any sensitive content or logic.
+ * However, NEVER change any content of 
+ * this file since will break the functionality 
+ * of whole application and you will need to
+ * reinstall it.
+ */
+ 
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: calc(100vh - 20px - 2rem);
+}
+
+.modules-flexbox {
+  display: flex;
+  gap: 20px;
+}
+
+.module {
+  background-color: var(--background-primary);
+  border-radius: 5px;
+  width: 250px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.module-header {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10px;
+  color: var(--text-secondary);
+}
+
+.module-desc {
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px;
+  flex: 1;
+}
+
+.button {
+  text-align: center;
+  max-width: 40;
+}

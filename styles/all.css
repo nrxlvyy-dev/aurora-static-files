@@ -1,0 +1,177 @@
+/**
+ * Aurora Raider (c) 2024
+ *
+ * This file is part of Aurora Raider,
+ * a discord raid toolkit for intended for
+ * educational purposes only.
+ * 
+ * This is a public stylesheet and it does not
+ * contain any sensitive content or logic.
+ * However, NEVER change any content of 
+ * this file since will break the functionality 
+ * of whole application and you will need to
+ * reinstall it.
+ */
+ 
+:root {
+  --background-primary: #13121c;
+  --background-secondary: #0c0b12;
+  --text-primary: #edecf0;
+  --text-secondary: #664fd7;
+  --text-accent: #362879;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-primary);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-secondary);
+}
+
+a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+svg {
+  width: 20px;
+}
+
+.window-frame {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--background-primary);
+  overflow: hidden;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  height: 20px;
+}
+
+.circle {
+  -webkit-app-region: no-drag;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 7.5px;
+}
+
+.red {
+  background-color: #ff5f57;
+}
+
+.yellow {
+  background-color: #ffc130;
+}
+
+.green {
+  background-color: #32d74b;
+}
+
+.red:hover {
+  background-color: #ff4136;
+}
+
+.yellow:hover {
+  background-color: #ffb700;
+}
+
+.green:hover {
+  background-color: #2eb94e;
+}
+
+.horizontal-line-container,
+.spacer-line-container {
+  display: flex;
+  justify-content: center;
+}
+
+.horizontal-line,
+.spacer-line {
+  border: 0;
+  height: 3px;
+  background: var(--background-secondary);
+  margin: 30px 30px 10px 30px;
+}
+
+.horizontal-line {
+  width: 500px;
+}
+
+.spacer-line {
+  width: 200px;
+}
+
+input,
+textarea {
+  margin: 12px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--background-secondary);
+  resize: none;
+}
+
+input {
+  width: 80%;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+form {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  border: none;
+  color: var(--text-secondary);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.button,
+button {
+  margin-top: 20px;
+  min-width: 130px;
+  padding: 14px;
+  border-radius: 7.5px;
+  background-color: var(--background-secondary);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--text-accent);
+}
+
+.disabled {
+  cursor: not-allowed;
+}

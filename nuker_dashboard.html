@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sapphire Webgui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://bit.ly/3Kw1HC9" rel="stylesheet">  <!--poppins font -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/all.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+  <script src="{{ url_for('static', filename='scripts/windowEvents.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='scripts/pageSwitcher.js') }}" defer></script>
+</head>
+<body>
+  <div class="window-frame">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+  <div class="main-section">
+    <div class="main-section-left">
+      <div class="main-section-left-items">
+        <a class="button" data-target="channel-modules">Channel Modules</a>
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="message-modules">Message Modules</a>
+      </div>
+      <div class="spacer-line-container">
+        <hr class="spacer-line">
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="help-page">How to use</a>
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="settings-page">Settings</a>
+      </div>
+    </div>
+    <div class="main-section-right">
+      <div class="section channel-modules">
+        <div class="module channel-creator">
+          <h1 class="module-header">Channel Deleter</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="hidden" name="module" value="channel-deleter"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module channel-spammer">
+          <h1 class="module-header">Channel Creator</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="text" name="channel_name" placeholder="Channel Name" required>
+            <input type="number" name="channel_count" placeholder="Channel Count" required>
+            <input type="hidden" name="module" value="channel-creator"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+      </div>
+      <div class="section message-modules" style="display:none;">
+        <div class="module message-spammer">
+          <h1 class="module-header">Message Spammer</h1>
+          <form class="login-form message-spammer-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="text" name="message" placeholder="Message" required>
+            <input type="hidden" name="module" value="channel-spammer"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>  
+      </div>
+      <div class="section help-page" style="display:none;">
+        <div class="module help">
+          <h1 class="module-header">How To Use</h1><br>
+          <h2 class="module-subheader">1. Getting Started</h2>
+          <p class="module-paragraph">
+            If you want to raid a server, you need <span class="blue-text">tokens</span> and <span class="blue-text">proxies (optional)</span>.<br><br>
+            <span class="blue-text">Tokens</span> are the accounts that will be used to raid the server. 
+            You can either create them yourself or buy them from someone. Never buy tokens priced above $0.10 per token, as they are overpriced. Always buy email- or phone-verified tokens.<br><br>
+            <span class="blue-text">Proxies</span> are used to hide your IP address so you don't get rate-limited. They also increase the performance of the tool. I recommend buying proxies from 
+            <span class="blue-text">iproyal.com</span>. After getting all the required items, you need to configure them on the settings page.
+          </p><br>
+          <h2 class="module-subheader">2. Using The Modules</h2>
+          <p class="module-paragraph">q 
+            To use a module, you need to fill in the required fields and press the start button. 
+            The module will start, and you will see the results in the console. 
+            You can stop the module by returning to the dashboard.
+          </p><br>
+          <h2 class="module-subheader">3. Raiding Tutorial</h2>
+          <p class="module-paragraph">
+            To <span class="blue-text">raid a server</span>, you need to join it first. 
+            You can use the server <span class="blue-text">joiner module</span> for that. 
+            Before starting the spammer or any other module, make sure the server you 
+            are joining doesn't have any verification system. If it does, you can use 
+            the bypass modules to bypass them.</p><br>
+          <h2 class="module-subheader">4. Status Codes</h2>
+          <p class="module-paragraph">
+            <span class="blue-text">Status codes</span> are the responses from the Discord API. Each status code is different and has a distinct meaning.
+            Here are some of the most common status codes:<br>
+            <span class="blue-text">200, 201, 204</span> status codes mean that everything went well.<br>
+            <span class="blue-text">400</span> status code is usually interpreted as "bad request," 
+            but 90% of the time it just means that your tokens encountered a captcha.<br>
+            <span class="blue-text">401</span> status code means that the token you are trying to use is invalid.<br>
+            <span class="blue-text">403</span> status code means that you don't have permission to perform an action.
+            When receiving this error code, make sure you have passed the verification on the server properly.<br>
+            <span class="blue-text">429</span> status code means that you got rate-limited. 
+            Don't panic; rate limits usually disappear after a few hours. Use proxies or a VPN to avoid getting rate-limited.<br>
+          </p><br>
+          <h2 class="module-subheader">5. Troubleshooting</h2>
+          <p class="module-paragraph">
+            If you are having any issues with the tool, contact us on our official Discord server.
+          </p>
+        </div>
+      </div>  
+    </div>  
+  </div>
+</body>
+</html>

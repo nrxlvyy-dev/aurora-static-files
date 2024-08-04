@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sapphire Webgui</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/all.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://bit.ly/3Kw1HC9" rel="stylesheet">  <!--poppins font -->
+  <script src="{{ url_for('static', filename='scripts/windowEvents.js') }}" defer></script>
+</head>
+<body>
+  {% if error %}
+  <div class="messagebox-fail">
+    <p class="error">Failed to login: {{ error }}</p>
+  </div>
+  {% endif %}
+  {% if success %}
+  <div class="messagebox-success">
+    <p class="success">{{ success }}</p>
+  </div>
+  {% endif %}
+  <div class="window-frame">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+  <div class="main-section">
+    <div class="login-box">
+      <h1 class="welcome-text">Welcome back!</h1>
+      <p class="welcome-paragraph">Please log-in to continue</p>
+      <form class="login-form" action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <p class="register-link">Don't have an account? <a href="/register">Register</a></p>
+        <button class="button" type="submit">Log in</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sapphire Webgui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://bit.ly/3Kw1HC9" rel="stylesheet">  <!--poppins font -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/all.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+  <script src="{{ url_for('static', filename='scripts/windowEvents.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='scripts/pageSwitcher.js') }}" defer></script>
+</head>
+<body>
+  <div class="window-frame">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+  <div class="main-section">
+    <div class="main-section-left">
+      <div class="main-section-left-items">
+        <a class="button" data-target="basic-modules">Basic Modules</a>
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="spam-modules">Spam Modules</a>
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="token-modules">Token Modules</a>
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="bypass-modules">Bypass Modules</a>
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="other-modules">Other &nbsp;Modules</a>
+      </div>
+      <div class="spacer-line-container">
+        <hr class="spacer-line">
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="help-page">How to use</a>
+      </div>
+      <div class="main-section-left-items">
+        <a class="button" data-target="settings-page">Settings</a>
+      </div>
+    </div>
+    <div class="main-section-right">
+      <div class="section basic-modules">
+        <div class="module server-joiner">
+          <h1 class="module-header">Server Joiner</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="invite" placeholder="Server Invite" required>
+            <input type="text" name="delay" placeholder="Delay (in seconds)" 
+              required pattern="\d+(\.\d+)?" title="Please enter a valid float number">
+            <input type="hidden" name="module" value="joiner"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module server-leaver">
+          <h1 class="module-header">Server Leaver</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="number" name="delay" placeholder="Delay (in seconds)" required>
+            <input type="hidden" name="module" value="leaver"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module voicechat-joiner">
+          <h1 class="module-header">Voicechat Joiner</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="channel_id" placeholder="Channel ID" required>
+            <input type="text" name="guild_id" placeholder="Guild ID" required>
+            <input type="number" name="delay" placeholder="Delay (in seconds)" required>
+            <input type="hidden" name="module" value="voicechat"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+      </div>
+      <div class="section spam-modules" style="display:none;">
+        <div class="module channel-spammer">
+          <h1 class="module-header">Channel Spammer</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="text" name="channel_id" placeholder="Channel ID" required>
+            <input type="text" name="message" placeholder="Message" required>
+            <input type="number" name="ping_count" placeholder="Pings per message (leave blank for 0)" required>
+            <input type="hidden" name="module" value="channel-spammer"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+      </div>
+      <div class="section token-modules" style="display:none;">
+        <div class="module token-checker">
+          <h1 class="module-header">Token Checker</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="hidden" name="module" value="token-checker"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module nick-changer">
+          <h1 class="module-header">Nick Changer</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="text" name="nickname" placeholder="Nickname" required>
+            <input type="hidden" name="module" value="nick-changer"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module token-onliner">
+          <h1 class="module-header">Token Onliner</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="hidden" name="module" value="token-onliner"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+      </div>
+      <div class="section bypass-modules" style="display:none;">
+        <div class="module onboarding-bypass">
+          <h1 class="module-header">Onboarding Bypass</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="hidden" name="module" value="onboarding-bypass"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>  
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module rules-bypass">
+          <h1 class="module-header">Rules Bypass</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="hidden" name="module" value="rules-bypass"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module restorecord-bypass">
+          <h1 class="module-header">Restorecord Bypass</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="text" name="application_id" placeholder="Bot ID" required>
+            <input type="hidden" name="module" value="restorecord-bypass"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module emoji-react">
+          <h1 class="module-header">Emoji React</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="channel_id" placeholder="Channel ID" required>
+            <input type="text" name="message_id" placeholder="Message ID" required>
+            <input type="text" name="emoji_id" placeholder="Emoji ID" required>
+            <input type="hidden" name="module" value="emoji-react"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+      </div>
+      <div class="section other-modules" style="display:none;">
+        <div class="module button-clicker">
+          <h1 class="module-header">Button Clicker</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="channel_id" placeholder="Channel ID" required>
+            <input type="text" name="message_id" placeholder="Message ID" required>
+            <input type="text" name="application_id" placeholder="Application ID" required>
+            <input type="text" name="guild_id" placeholder="Server ID" required>
+            <input type="hidden" name="module" value="button-clicker"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+        <div class="horizontal-line-container">
+          <hr class="horizontal-line">
+        </div>
+        <div class="module user-caller">
+          <h1 class="module-header">User Caller</h1>
+          <form class="login-form" action="/module" method="POST">
+            <input type="text" name="user_id" placeholder="User ID" required>
+            <input type="hidden" name="module" value="user-caller"> <!-- Hidden field -->
+            <button class="button" type="submit">Start</button>
+          </form>
+        </div>
+      </div> 
+      <div class="section settings-page" style="display:none;">
+        <div class="module settings">
+          <h1 class="module-header">Settings</h1>
+          <form class="login-form" action="/settings" method="POST">
+            <textarea name="tokens" placeholder="Tokens"></textarea>
+            <textarea name="proxies" placeholder="Proxies (leave blank for proxyless)"></textarea>
+            <button class="button" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="section help-page" style="display:none;">
+        <div class="module help">
+          <h1 class="module-header">How To Use</h1><br>
+          <h2 class="module-subheader">1. Getting Started</h2>
+          <p class="module-paragraph">
+            If you want to raid a server, you need <span class="blue-text">tokens</span> and <span class="blue-text">proxies (optional)</span>.<br><br>
+            <span class="blue-text">Tokens</span> are the accounts that will be used to raid the server. 
+            You can either create them yourself or buy them from someone. Never buy tokens priced above $0.10 per token, as they are overpriced. Always buy email- or phone-verified tokens.<br><br>
+            <span class="blue-text">Proxies</span> are used to hide your IP address so you don't get rate-limited. They also increase the performance of the tool. I recommend buying proxies from 
+            <span class="blue-text">iproyal.com</span>. After getting all the required items, you need to configure them on the settings page.
+          </p><br>
+          <h2 class="module-subheader">2. Using The Modules</h2>
+          <p class="module-paragraph">q 
+            To use a module, you need to fill in the required fields and press the start button. 
+            The module will start, and you will see the results in the console. 
+            You can stop the module by returning to the dashboard.
+          </p><br>
+          <h2 class="module-subheader">3. Raiding Tutorial</h2>
+          <p class="module-paragraph">
+            To <span class="blue-text">raid a server</span>, you need to join it first. 
+            You can use the server <span class="blue-text">joiner module</span> for that. 
+            Before starting the spammer or any other module, make sure the server you 
+            are joining doesn't have any verification system. If it does, you can use 
+            the bypass modules to bypass them.</p><br>
+          <h2 class="module-subheader">4. Status Codes</h2>
+          <p class="module-paragraph">
+            <span class="blue-text">Status codes</span> are the responses from the Discord API. Each status code is different and has a distinct meaning.
+            Here are some of the most common status codes:<br>
+            <span class="blue-text">200, 201, 204</span> status codes mean that everything went well.<br>
+            <span class="blue-text">400</span> status code is usually interpreted as "bad request," 
+            but 90% of the time it just means that your tokens encountered a captcha.<br>
+            <span class="blue-text">401</span> status code means that the token you are trying to use is invalid.<br>
+            <span class="blue-text">403</span> status code means that you don't have permission to perform an action.
+            When receiving this error code, make sure you have passed the verification on the server properly.<br>
+            <span class="blue-text">429</span> status code means that you got rate-limited. 
+            Don't panic; rate limits usually disappear after a few hours. Use proxies or a VPN to avoid getting rate-limited.<br>
+          </p><br>
+          <h2 class="module-subheader">5. Troubleshooting</h2>
+          <p class="module-paragraph">
+            If you are having any issues with the tool, contact us on our official Discord server.
+          </p>
+        </div>
+      </div>  
+    </div>  
+  </div>
+</body>
+</html>

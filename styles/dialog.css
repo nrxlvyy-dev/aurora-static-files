@@ -1,0 +1,25 @@
+/**
+ * Aurora Raider (c) 2024
+ *
+ * This file is part of Aurora Raider,
+ * a discord raid toolkit for intended for
+ * educational purposes only.
+ * 
+ * This is a public stylesheet and it does not
+ * contain any sensitive content or logic.
+ * However, NEVER change any content of 
+ * this file since will break the functionality 
+ * of whole application and you will need to
+ * reinstall it.
+ */
+ 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-box-title {
+  font-size: 2rem;
+  color: var(--text-secondary);
+}

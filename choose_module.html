@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/all.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/choose_module.css') }}">
+  <script src="{{ url_for('static', filename='scripts/windowEvents.js') }}" defer></script>
+</head>
+<body>
+  <div class="window-frame">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+  <div class="content">
+    <div class="modules-flexbox">
+      <div class="module">
+        <h1 class="module-header">Aurora Raider</h1>
+        <p class="module-desc">Aurora Raider allows you to raid discord server using tokens and proxies.</p>
+        <a href="/raider" class="button">Run Raider</a>
+      </div>
+      <div class="module">
+        <h1 class="module-header">Aurora Nuker</h1>
+        <p class="module-desc">Aurora Nuker is a powerful discord bot that can nuke discord servers.</p>
+        <a href="/nuker" class="button">Run Nuker</a>
+      </div>
+      <div class="module">
+        <h1 class="module-header">Aurora Booster</h1>
+          <p class="module-desc">Aurora Booster helps you with automating your boosting service.<br> (Not avaiable yet)</p> 
+        <a class="button disabled">Run Booster</a>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

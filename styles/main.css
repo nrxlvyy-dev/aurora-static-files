@@ -1,0 +1,98 @@
+/**
+ * Aurora Raider (c) 2024
+ *
+ * This file is part of Aurora Raider,
+ * a discord raid toolkit for intended for
+ * educational purposes only.
+ * 
+ * This is a public stylesheet and it does not
+ * contain any sensitive content or logic.
+ * However, NEVER change any content of 
+ * this file since will break the functionality 
+ * of whole application and you will need to
+ * reinstall it.
+ */
+
+.main-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 20px - 2rem);
+}
+
+.register-box,
+.login-box {
+  padding: 50px 20px;
+  border-radius: 10px;
+  background-color: var(--background-primary)
+}
+
+.register-box {
+  height: 390px;
+  width: 300px;
+}
+
+.login-box {
+  height: 320px;
+  width: 300px;
+}
+
+.welcome-text {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.credits-paragraph,
+.welcome-paragraph {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 200;  
+}
+
+.login-form .button {
+  margin-top: 30px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--text-secondary);
+  color: var(--background-primary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login-form .login-link,
+.login-form .register-link {
+  margin-top: 5px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.credits-paragraph {
+  margin-top: 50px;
+}
+
+.messagebox-success,
+.messagebox-fail {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  padding: 20px;
+  width: calc(100% - 80px);
+  border-radius: 10px;
+}
+
+.messagebox-success p,
+.messagebox-fail p {
+  color: var(--background-primary);
+}
+
+.messagebox-success {
+  background-color: #32d74b;
+}
+
+.messagebox-fail {
+  background-color: #ff5f57;
+}

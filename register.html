@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sapphire Webgui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://bit.ly/3Kw1HC9" rel="stylesheet">  <!--poppins font -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/all.css') }}">
+  <script src="{{ url_for('static', filename='scripts/windowEvents.js') }}" defer></script>
+</head>
+<body>
+  {% if error %}
+  <div class="messagebox-fail">
+    <p class="error">{{ error }}</p>
+  </div>
+  {% endif %}
+  <div class="window-frame">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+  <div class="main-section">
+    <div class="register-box">
+      <h1 class="welcome-text">Welcome back!</h1>
+      <p class="welcome-paragraph">Please register to continue</p>
+      <form class="login-form" action="/register" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="license_key" placeholder="License Key" required>
+        <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
+        <button class="button" type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

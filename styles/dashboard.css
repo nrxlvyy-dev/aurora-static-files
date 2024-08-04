@@ -1,0 +1,111 @@
+/**
+ * Aurora Raider (c) 2024
+ *
+ * This file is part of Aurora Raider,
+ * a discord raid toolkit for intended for
+ * educational purposes only.
+ * 
+ * This is a public stylesheet and it does not
+ * contain any sensitive content or logic.
+ * However, NEVER change any content of 
+ * this file since will break the functionality 
+ * of whole application and you will need to
+ * reinstall it.
+ */
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 400px;
+}
+
+textarea {
+  width: 400px;
+  height: 200px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.main-section {
+  height: calc(100% - 80px - 2rem);
+  display: flex;
+  margin: 30px;
+  display: flex;
+}
+
+.main-section-left,
+.main-section-right {
+  flex: 0 0;
+  border-radius: 10px;
+}
+
+.main-section-left {
+  flex: 0 0 200px;
+  background-color: var(--background-primary);
+  max-width: 200px;
+}
+
+.main-section-right {
+  flex: 1;
+  background-color: var(--background-primary);
+  overflow: auto;
+  max-height: 100vh;
+  margin-left: 30px;
+}
+
+.main-section-right::-webkit-scrollbar-track {
+  background: var(--background-primary);
+}
+
+.main-section-left-items,
+.module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.module {
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.module-header,
+.module-subheader {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.module-header {
+  font-size: 2.5rem;
+}
+
+.module-subheader {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.module-paragraph {
+  margin-top: 20px;
+}
+
+.blue-text {
+  color: var(--text-secondary);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.help {
+  margin: 20px 20%;
+}

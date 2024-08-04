@@ -1,0 +1,80 @@
+/**
+ * Aurora Raider (c) 2024
+ *
+ * This file is part of Aurora Raider,
+ * a discord raid toolkit for intended for
+ * educational purposes only.
+ * 
+ * This is a public stylesheet and it does not
+ * contain any sensitive content or logic.
+ * However, NEVER change any content of 
+ * this file since will break the functionality 
+ * of whole application and you will need to
+ * reinstall it.
+ */
+
+.console {
+  height: calc(100% - 140px - 2rem);
+  margin: 30px;
+  border-radius: 10px;
+  background-color: var(--background-primary);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 10%; /* Ustaw wysokość na 10% wysokości .console */
+} 
+
+.header h1 {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.output {
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  height: 80%; /* Ustaw wysokość na 70% wysokości .console */
+  overflow: auto;
+  background-color: var(--background-secondary);
+}
+
+.output p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10pt;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 10%; /* Ustaw wysokość na 20% wysokości .console */
+}
+
+.button {
+  text-align: center;
+}
+
+.log-hour {
+  color: var(--text-secondary)
+}
+
+.log-normal {
+  color: var(--text-primary)
+}
+
+.log-token {
+  color: var(--text-secondary);
+}
+
+.log-circle {
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: azure;
+}
