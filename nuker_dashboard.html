@@ -70,6 +70,17 @@
           </form>
         </div>  
       </div>
+      <div class="section settings-page" style="display:none;">
+        <div class="module settings">
+          <h1 class="module-header">Settings</h1>
+          <form class="login-form" action="/settings" method="POST">
+            <textarea name="tokens" placeholder="Tokens"></textarea>
+            <textarea name="proxies" placeholder="Proxies (leave blank for proxyless)"></textarea>
+            <textarea name="bot_token" placeholder="Bot Token"></textarea>
+            <button class="button" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
       <div class="section help-page" style="display:none;">
         <div class="module help">
           <h1 class="module-header">How To Use</h1><br>
